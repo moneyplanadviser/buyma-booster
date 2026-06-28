@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BUYMA出品ブースター（仮）— 公式API連携の自動出品ツール</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="nav">
+  <div class="wrap bar">
+    <a class="logo" href="index.html">BUYMA<span> 出品ブースター</span></a>
+    <nav class="links">
+      <a href="#concept">考え方</a>
+      <a href="#problem">こんな悩み</a>
+      <a href="#value">特徴</a>
+      <a href="#how">仕組み</a>
+      <a href="#option">オプション</a>
+      <a href="#price">料金</a>
+      <a class="cta" href="apply.html">無料で試す</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hgrid">
+    <div class="copy">
+      <span class="kicker"><span class="dot"></span>公式と同じ操作感 ＋ 公式にできないこと</span>
+      <h1>操作は、いつものBUYMA。<br><span class="hl">機能だけ、別物に。</span></h1>
+      <p class="lead">公式の出品画面とそっくりだから、新しく覚えることはゼロ。その同じ画面の上に、文体AI・まとめ出品・画像加工など、<b>公式にはできない"ブースト"</b>が乗ります。</p>
+      <div class="ctas">
+        <a class="btn" href="apply.html">出品30件まで、無料で試す</a>
+        <a class="btn ghost" href="#how">使い方を見る</a>
+      </div>
+      <div class="trust">
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f9d50" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>公式と同じ操作感</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f9d50" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>PC常駐不要・24時間</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f9d50" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>自動課金なし</span>
+      </div>
+    </div>
+
+    <div class="shot">
+      <div class="app">
+        <div class="app-top">
+          <div class="dots"><i class="r"></i><i class="y"></i><i class="g"></i></div>
+          <span class="name">BUYMA <small>出品ブースター</small></span>
+          <span class="ava">桜</span>
+        </div>
+        <div class="app-body">
+          <div class="app-side">
+            <div class="item active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>新規出品</div>
+            <div class="item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>出品一覧</div>
+            <div class="item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>画像</div>
+            <div class="item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>設定</div>
+          </div>
+          <div class="app-main">
+            <h4>新規出品</h4>
+            <p class="sub">項目を埋めて、〔出品する〕を押すだけ</p>
+            <div class="field" style="margin-bottom:13px">
+              <label>商品名</label>
+              <div class="input"><span>レザーハンドバッグ／本革2WAY</span></div>
+            </div>
+            <div class="frow">
+              <div class="field"><label>カテゴリ</label><div class="input sel"><span>バッグ</span></div></div>
+              <div class="field"><label>ブランド</label><div class="input sel"><span>ノーブランド</span></div></div>
+            </div>
+            <div class="frow">
+              <div class="field"><label>価格</label><div class="input"><span>24,800</span><span class="unit">円</span></div></div>
+              <div class="field"><label>配送方法</label><div class="input sel"><span>国際書留</span></div></div>
+            </div>
+            <div class="field">
+              <label>商品画像</label>
+              <div class="imgs">
+                <div class="t"><img src="assets/demo-cutout.jpg" alt=""></div>
+                <div class="t"><img src="assets/demo-bag-before.jpg" alt=""></div>
+                <div class="t add">＋</div>
+              </div>
+              <span class="magicbtn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8a4a0c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/></svg>ワンクリック画像加工</span>
+            </div>
+            <div class="field">
+              <label>商品説明</label>
+              <div class="ta">上質な本革を使用した2WAYハンドバッグ。きれいめにも普段使いにも…
+                <span class="aibtn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8a4a0c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/></svg>文体AIで生成</span>
+              </div>
+            </div>
+            <div class="submit">
+              <span class="gobtn">出品する <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <span class="hint">公式API経由で自動出品されます</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="cap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8a4a0c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>使い慣れた画面のまま。<b>"文体AIで生成"など、公式にない機能が同じ画面に。</b></p>
+      <p class="imgnote">※画面はイメージです（現在準備中）</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT (2層) -->
+<section class="concept" id="concept">
+  <div class="wrap center">
+    <span class="eyebrow">BUYMA出品ブースターの考え方</span>
+    <h2 class="sec">操作は、いつものBUYMAのまま。<br>機能だけ、別物になる。</h2>
+    <p class="sub">公式を置き換えるのではありません。公式そっくりの使い慣れた画面の上に、公式にはできないことを"足す"。だから迷わず使えて、できることだけが増えます。</p>
+
+    <div class="layers">
+      <div class="layer base">
+        <div class="layerhead">
+          <span class="ltag base">土台</span>
+          <h3>公式と同じ操作感 ＝ 覚えることゼロ</h3>
+        </div>
+        <p>いつものBUYMAの出品画面とそっくり。新しい操作を覚える必要はありません。今まで通り、画面を埋めるだけ。</p>
+      </div>
+
+      <div class="layerjoin">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+        この使い慣れた画面に、できることを足していく
+      </div>
+
+      <div class="layer boost">
+        <div class="layerhead">
+          <span class="ltag">＋ ブースター</span>
+          <h3>公式にはできないことが、乗る</h3>
+        </div>
+        <div class="boostgrid">
+          <div class="bchip"><span class="bic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a4a0c" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/></svg></span><span>文体AIが説明文を書く<small>ショップの口調そのままで自動生成</small></span></div>
+          <div class="bchip"><span class="bic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a4a0c" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span><span>まとめて出品<small>1件ずつではなく、一気に</small></span></div>
+          <div class="bchip"><span class="bic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a4a0c" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span><span>画像を自動で加工<small>背景除去・余白・フレーム</small></span></div>
+          <div class="bchip"><span class="bic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a4a0c" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L20 5"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span>入力が自動で埋まる<small>配送方法やタグを自動で解決</small></span></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="conceptline">使い慣れた操作はそのまま。<b>できることだけが、増えていく。</b>それが「ブースター」です。</p>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="pain" id="problem">
+  <div class="wrap center">
+    <span class="eyebrow">こんな出品作業、もう限界では？</span>
+    <h2 class="sec">出品の"作業"に、時間と神経をすり減らしていませんか</h2>
+    <p class="sub">売れる商品を探す時間より、出品の手作業に追われていませんか。</p>
+    <div class="grid4" style="text-align:left">
+      <div class="paincard"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b626b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></div>1点ずつの手入力で、リサーチに使う時間が消えていく</div>
+      <div class="paincard"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b626b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>ツールを動かすために、パソコンを開きっぱなしにしている</div>
+      <div class="paincard"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b626b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4-3 7-7 8-4-1-7-4-7-8V6z"/><path d="M12 9v3M12 15h.01"/></svg></div>ブラウザを自動操作するツールの"垢BAN"が、ずっと不安</div>
+      <div class="paincard"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b626b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 8.5l3.5 4.5 3.5-4.5M12 13v5M9.2 15h5.6"/></svg></div>外注は費用がかさむ。引き継ぎや品質管理も大変</div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE -->
+<section id="value">
+  <div class="wrap center">
+    <span class="eyebrow">BUYMA出品ブースターの特徴</span>
+    <h2 class="sec">"出品作業"を、画面を埋めるだけに圧縮する</h2>
+    <p class="sub">同じ「自動出品」でも、出品の"やり方"が違います。だから安心して任せられます。</p>
+    <div class="grid3" style="text-align:left">
+      <div class="vcard">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8a4a0c" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4-3 7-7 8-4-1-7-4-7-8V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>公式API連携 ＝ 垢BANに強い</h3>
+        <p>ブラウザを自動で動かす"常駐型"ツールと違い、BUYMA公式の出品APIを使用。検知されやすい自動操作をしないため、アカウントへのリスクを抑えられます。</p>
+      </div>
+      <div class="vcard">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8a4a0c" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></div>
+        <h3>PC常駐不要・24時間</h3>
+        <p>出品はサーバー側で実行。あなたのパソコンを開いていなくても、出品作業が進みます。寝ている間も、外出中も。</p>
+      </div>
+      <div class="vcard">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8a4a0c" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
+        <h3>かんたんな入力画面</h3>
+        <p>専用の出品画面に沿って、項目を埋めるだけ。専門知識や複雑な操作、特別なソフトのインストールは必要ありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW (図解) -->
+<section class="pain" id="how">
+  <div class="wrap center">
+    <span class="eyebrow">使い方</span>
+    <h2 class="sec">3ステップで、出品が"自動"になる</h2>
+    <p class="sub">あなたがやるのは最初の「入力」だけ。あとはサーバー側で動きます。</p>
+    <div class="flowsteps" style="margin-top:34px">
+      <div class="fcard">
+        <div class="n">1</div>
+        <h3>入力画面に入力する</h3>
+        <p>出品画面に沿って項目を埋めるだけ。</p>
+        <div class="mini">
+          <p class="mlab">商品名</p>
+          <div class="mbox">レザーハンドバッグ</div>
+          <p class="mlab">価格</p>
+          <div class="mbox">24,800 円</div>
+          <div class="mgo">出品する</div>
+        </div>
+      </div>
+      <div class="arrow"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="fcard">
+        <div class="n">2</div>
+        <h3>公式APIで自動出品</h3>
+        <p>BUYMA公式APIを通じて出品。ブラウザ操作はしません。</p>
+        <div class="mini">
+          <p class="mlab">公式APIに送信中…</p>
+          <div class="prow"><span class="nm">レザーハンドバッグ</span><span class="pst send">送信中</span></div>
+          <div class="prow"><span class="nm">スニーカー（ホワイト）</span><span class="pst send">送信中</span></div>
+          <div class="pbar"><span></span></div>
+          <div class="apip">BUYMA 公式API 連携</div>
+        </div>
+      </div>
+      <div class="arrow"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="fcard">
+        <div class="n">3</div>
+        <h3>出品完了（PCは閉じてOK）</h3>
+        <p>結果は画面で確認。寝ている間も、外出中も。</p>
+        <div class="mini">
+          <p class="mlab">出品一覧</p>
+          <div class="prow"><span class="nm">レザーハンドバッグ</span><span class="pst done"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0b8043" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>完了</span></div>
+          <div class="prow"><span class="nm">スニーカー（ホワイト）</span><span class="pst done"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0b8043" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>完了</span></div>
+          <div class="prow"><span class="nm">サングラス</span><span class="pst done"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0b8043" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>完了</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM / 出品一覧 -->
+<section id="system">
+  <div class="wrap center">
+    <span class="eyebrow">出品一覧</span>
+    <h2 class="sec">出品したあとも、進捗はこの画面で一目</h2>
+    <p class="sub">出品した商品と結果は、出品一覧でまとめて確認。再出品や管理も同じ画面で完結します。<br><span class="imgnote">※画面はイメージです（現在準備中）</span></p>
+    <div class="app" style="max-width:880px;margin:0 auto;text-align:left">
+      <div class="app-top">
+        <div class="dots"><i class="r"></i><i class="y"></i><i class="g"></i></div>
+        <span class="name">BUYMA <small>出品ブースター</small></span>
+        <span class="ava">桜</span>
+      </div>
+      <div class="app-body">
+        <div class="app-side">
+          <div class="item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>新規出品</div>
+          <div class="item active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>出品一覧</div>
+          <div class="item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>画像</div>
+          <div class="item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>設定</div>
+        </div>
+        <div class="app-main">
+          <div class="amh"><h4>出品一覧</h4><span class="hint" style="font-size:12px;color:var(--mut)">本日 4件</span></div>
+          <p class="sub">出品した商品の結果がここに表示されます</p>
+          <div class="tablewrap">
+          <table class="lst">
+            <thead><tr><th>参照番号</th><th>商品名</th><th>価格</th><th>配送方法</th><th>状況</th></tr></thead>
+            <tbody>
+              <tr><td class="colA">1001</td><td>レザーハンドバッグ</td><td class="num">24,800</td><td>国際書留</td><td><span class="st done"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0b8043" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>出品完了</span></td></tr>
+              <tr><td class="colA">1002</td><td>スニーカー（ホワイト）</td><td class="num">18,500</td><td>EMS</td><td><span class="st done"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0b8043" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>出品完了</span></td></tr>
+              <tr><td class="colA">1003</td><td>サングラス</td><td class="num">9,800</td><td>国際eパケット</td><td><span class="st done"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0b8043" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>出品完了</span></td></tr>
+              <tr><td class="colA">1004</td><td>レザーウォレット</td><td class="num">15,200</td><td>国際書留</td><td><span class="st run">処理中…</span></td></tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section>
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">従来ツールとの違い</span>
+    <h2 class="sec">同じ「自動出品」でも、中身が違う</h2>
+    <p class="sub">出品の"やり方"の違いが、安心とラクさの違いになります。</p></div>
+    <div class="tablewrap">
+      <table>
+        <tr><th></th><th>従来のブラウザ常駐型ツール</th><th class="us">BUYMA出品ブースター</th></tr>
+        <tr><td>出品方式</td><td class="mut"><span class="ev ev-t">△</span>ブラウザを自動操作</td><td class="us"><span class="ev ev-o">◯</span>公式API連携</td></tr>
+        <tr><td>アカBANリスク</td><td class="mut"><span class="ev ev-x">✕</span>高め（自動操作が検知されやすい）</td><td class="us"><span class="ev ev-o">◯</span>抑えられる</td></tr>
+        <tr><td>パソコン</td><td class="mut"><span class="ev ev-x">✕</span>開きっぱなしが必要</td><td class="us"><span class="ev ev-o">◯</span>不要・24時間動く</td></tr>
+        <tr><td>入力</td><td class="mut"><span class="ev ev-t">△</span>専用ソフト</td><td class="us"><span class="ev ev-o">◯</span>かんたんな専用画面</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 伴走 -->
+<section class="pain">
+  <div class="wrap center">
+    <span class="eyebrow">売り切りにしない</span>
+    <h2 class="sec">導入して終わり、じゃない。<br>ずっと"いちばん楽な状態"に保ちます</h2>
+    <p class="sub">初期設定からBUYMA API連携、運用の定着まで、1ショップごとに合わせて伴走。さらに<b>BUYMA側の仕様変更にもこちらが追従し、新しい便利さを足し続けます</b>。だから、いつ使っても最新で、いちばん楽な状態が続きます。「設定が不安」という方こそ、安心して始められます。</p>
+  </div>
+</section>
+
+<!-- OPTIONS -->
+<section id="option">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">オプション</span>
+    <h2 class="sec">必要なものだけ、後から足せる</h2>
+    <p class="sub">出品の自動化を本体に、あなたの運用に合わせて単機能のオプションを追加できます。<br>各オプションの詳細は専用ページでご覧いただけます。</p></div>
+    <div class="optcards">
+      <a class="optcard" href="option-info.html"><img src="assets/opt-info.png" alt="商品リスト生成"><div class="body"><span class="t">商品リスト生成</span><span class="d">出品リストの作成を補助</span><span class="more">詳しく見る →</span></div></a>
+      <a class="optcard" href="option-image.html"><img src="assets/opt-image.png" alt="画像加工"><div class="body"><span class="t">画像加工</span><span class="d">2x2配置・余白・フレーム</span><span class="more">詳しく見る →</span></div></a>
+      <a class="optcard" href="option-ingest.html"><img src="assets/opt-ingest.png" alt="画像取得"><div class="body"><span class="t">画像取得</span><span class="d">買付元から画像をまとめて取得</span><span class="more">詳しく見る →</span></div></a>
+      <a class="optcard" href="option-style.html"><img src="assets/opt-style.png" alt="文体AI"><div class="body"><span class="t">文体AI <span class="badge">本体に標準搭載</span></span><span class="d">ショップの文体で説明文生成</span><span class="more">詳しく見る →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- TRIAL FLOW -->
+<section class="pain" id="trial">
+  <div class="wrap center">
+    <span class="eyebrow">まずは無料で</span>
+    <h2 class="sec">全機能を、出品30件まで無料でお試し</h2>
+    <p class="sub">いきなり契約は不要。導入サポート面談で<b>使える状態まで一緒に立ち上げて</b>から、
+      実際の出品で<b>2週間、または出品30件に達するまで</b>（早い方）試せます。続けたい場合だけ、プランをご購入ください。</p>
+    <div class="steps" style="text-align:left;margin-top:30px">
+      <div class="step"><div class="n"></div><img class="stepimg" src="assets/step1.png" alt="無料お試しに申し込み"><h3>無料お試しに申し込み</h3><p>メールアドレスを登録するだけ。クレジットカードは不要です。</p></div>
+      <div class="step"><div class="n"></div><img class="stepimg" src="assets/step2.png" alt="導入サポート面談"><h3>導入サポート面談</h3><p>初期設定とBUYMA API連携を、オンラインで一緒に立ち上げ。すぐ使える状態にします。</p></div>
+      <div class="step"><div class="n"></div><img class="stepimg" src="assets/step3.png" alt="実運用"><h3>フル機能で実運用</h3><p>全機能を、出品30件まで無料で。実際の出品で、効果をその目で確かめてください。</p></div>
+    </div>
+    <p class="sub" style="margin-top:28px">無料期間中のご意見・ご要望は大歓迎。一緒に、もっと使いやすくしていきます。<br>
+      <b>続けたい場合のみ</b>プランをご購入。何もしなければ自動で課金されることはありません。</p>
+    <a class="btn" href="apply.html">出品30件まで、無料で試す</a>
+    <p class="sub" style="margin-top:14px;font-size:12.5px">※「2週間」または「出品30件」のどちらか早い方までが無料です。</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap" style="max-width:780px">
+    <div class="center"><span class="eyebrow">よくある質問</span><h2 class="sec">FAQ</h2></div>
+    <div class="faq" style="margin-top:24px">
+      <details open><summary>本当にアカウントBANされませんか？</summary><div class="a">「絶対」はお約束できません。ただし本ツールはBUYMA公式のAPIを使い、ブラウザを自動操作しません。検知されやすい操作を避けるため、ブラウザ常駐型ツールよりリスクを抑えられます。</div></details>
+      <details><summary>パソコンをつけっぱなしにしなくていいの？</summary><div class="a">はい。出品はサーバー側で動くため、あなたのPCを開いていなくても出品が進みます。</div></details>
+      <details><summary>始めるのに何が必要ですか？</summary><div class="a">BUYMA公式APIの連携設定だけです。連携は導入サポート面談で一緒に行うので、専門知識は不要。あとは画面に沿って入力すればお使いいただけます。</div></details>
+      <details><summary>オプションは必須ですか？</summary><div class="a">いいえ、すべてオプションです。出品の自動化だけでもお使いいただけます。必要なものだけ後から足せます。</div></details>
+      <details><summary>料金はいくらですか？無料期間後に勝手に課金されませんか？</summary><div class="a">本体の出品ツール（文体AI標準搭載）が月9,800円、オプションは1つ月4,800円（商品リスト生成／画像加工／画像取得）。全部まとめるとセット割で、通常24,200円→月19,800円です。さらに手厚い「松（全部入り＋優先サポート＋複数アカウント運用）」は月29,800円。単品の追加ライセンスは、どのツールも1つ月2,800円。まずは全機能を、2週間または出品30件（早い方）まで無料でお試しいただけ、無料期間が終わっても自動で課金されることはなく、続けたい場合のみご購入いただく形です。</div></details>
+      <details><summary>お試しを始めるのにクレジットカードは必要？</summary><div class="a">不要です。メールアドレスのご登録だけで始められます。</div></details>
+      <details><summary>今使っているツールから乗り換えられますか？</summary><div class="a">はい。入力は画面に沿って項目を埋めるだけなので、移行しやすい構成です。導入サポート面談で現状に合わせて立ち上げます。</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="price" id="price">
+  <div class="wrap">
+    <span class="eyebrow">料金</span>
+    <h2 class="sec">必要な分だけ。まとめると、おトク。</h2>
+    <p class="sub">本体（出品ツール）に、必要なツールだけを足していく料金です。全部まとめるとセット割、もっと手厚い松プランも。全プラン、まずは出品30件まで無料でお試しいただけます。</p>
+
+    <div class="setdeal premium">
+      <div class="sdleft">
+        <span class="sdlabel">いちばん手厚い</span>
+        <h3>松・全部入り ＋ 優先サポート</h3>
+        <p>フルセットの全機能に、優先サポートと複数アカウント運用まで。本気で量を伸ばす方へ。</p>
+      </div>
+      <div class="sdright">
+        <span class="now"><span class="cur">¥</span>29,800<span class="per">/月（税別）</span></span>
+      </div>
+    </div>
+
+    <div class="setdeal">
+      <div class="sdleft">
+        <span class="sdlabel">いちばん人気・おトク</span>
+        <h3>全部のせ・フルセット</h3>
+        <p>出品ツール＋商品リスト生成＋画像加工＋画像取得。出品まわりを、丸ごと自動化。</p>
+      </div>
+      <div class="sdright">
+        <span class="was">通常 ¥24,200/月</span>
+        <span class="now"><span class="cur">¥</span>19,800<span class="per">/月（税別）</span></span>
+        <span class="off">セット割 ¥4,400 OFF</span>
+      </div>
+    </div>
+
+    <p class="orline"><span>または、必要な分だけ単品で</span></p>
+
+    <div class="combo">
+      <div class="combo-base">
+        <span class="ribbon">本体・まずはこれから</span>
+        <div class="combo-head">
+          <div class="combo-info">
+            <h3>出品ツール（自動出品）</h3>
+            <p class="planlead">公式APIで自動出品。PC常駐不要・垢BANに強い、ブースターの土台。ショップの文体で説明文を書く<b>文体AIも標準搭載</b>。導入サポート（伴走）込み。</p>
+          </div>
+          <div class="combo-price"><span class="cur">¥</span>9,800<span class="per">/月（税別）</span></div>
+        </div>
+        <ul class="plist">
+          <li><span class="ck">✓</span> 公式パーソナルショッパーAPI連携</li>
+          <li><span class="ck">✓</span> PC常駐不要・24時間サーバー出品</li>
+          <li><span class="ck">✓</span> かんたんな入力画面 ／ 文体AI標準搭載</li>
+          <li><span class="ck">✓</span> 導入サポート面談・運用の伴走</li>
+        </ul>
+      </div>
+
+      <div class="combo-plus">＋ 出品ツールに、必要な機能だけ追加</div>
+
+      <div class="combo-opts">
+        <p class="combo-note">オプションは<b>出品ツールに追加して使う機能</b>です（オプションだけでは使えません）。要らないものは付けなくてOK・後からでも足せます。</p>
+        <ul class="plist optlist">
+          <li><span class="ck">＋</span> 商品リスト生成ツール<span class="pr">¥4,800/月</span></li>
+          <li><span class="ck">＋</span> 画像加工ツール<span class="pr">¥4,800/月</span></li>
+          <li><span class="ck">＋</span> 画像取得ツール<span class="pr">¥4,800/月</span></li>
+        </ul>
+        <p style="margin-top:14px;font-size:12.5px;color:var(--mut)">各ツールの詳細は<a href="#option" style="color:var(--accent-d);font-weight:700">オプション一覧</a>からご覧いただけます。</p>
+      </div>
+    </div>
+
+    <div class="pcallouts single">
+      <div class="pcallout">
+        <div class="pcic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8a4a0c" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h4>追加ライセンス（複数アカウント運用）</h4>
+        <p>2アカウント目以降の運用は、<b>どのツールも1ライセンス 月2,800円</b>で追加できます。複数ショップ・複数アカウントの運用にも。</p>
+      </div>
+    </div>
+
+    <p class="pricenote">※ 表示はすべて税別の参考価格です（公開前に最終確認）。全プラン、まずは2週間または出品30件（早い方）まで無料お試し。無料期間が終わっても、自動で課金されることはありません（続けたい場合のみご購入）。</p>
+    <a class="btn" href="apply.html">出品30件まで、無料で試す</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ctaband" id="contact">
+  <div class="wrap">
+    <h2>まずは、無料で。</h2>
+    <p>全機能を、2週間または出品30件（早い方）まで無料で。導入サポート面談つきだから、設定が不安な方も安心。続けたい場合だけご購入、自動で課金されることはありません。</p>
+    <a class="btn" href="apply.html">無料お試しに申し込む</a>
+  </div>
+</section>
+
+<footer>
+  BUYMA出品ブースター（仮称）／ SHIRO ・ 準備中ドラフト<br>
+  BUYMAは株式会社エニグモの商標です。本サービスはエニグモ社公認の公式サービスではない、独立した出品支援ツールです。
+</footer>
+</body>
+</html>
